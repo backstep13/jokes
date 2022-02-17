@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Афоризмы</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='grid.css')}}">
+	<script src="{{url_for('static', filename='jquery-3.3.1.js')}}"></script>
+</head>
+
+<body>
+<div class="container">
+	<div class="header">header</div>
+	
+    <div class="content">
+		<p><img src="static/scale_1200.jpg" alt="Конфуций" width="50%"></p>
+	<div id="result"></div>
+	<button id="button" type="submit">Следующий</button>
+	<script type="text/javascript">
+	$(function(){ 
+		$("#button").click(function() {
+			$.get("/api/", function(data){
+				$("#result").text(data);
+			});
+		});
+	});
+	</script>
+	</div>
+	
+	<div class="footer">footer</div>
+</div>
+
+</body>
+</html>
