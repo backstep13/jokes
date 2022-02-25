@@ -1,0 +1,10 @@
+version: '3'
+services:
+  flask:
+    build: ./aphorisms
+    container_name: backend-flask
+    # volumes:
+    #  - ./aphorisms:/aphorisms
+    ports:
+      - "5000:5000"
+    command: python main.py
