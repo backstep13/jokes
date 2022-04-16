@@ -25,7 +25,7 @@
 		<script type="text/javascript">
 		$(function(){
 			$("#button").click(function() {
-				$.get("/api/", function(data){
+				$.get("/api", function(data){
 					$("#result").text(data);
 				});
 			});
